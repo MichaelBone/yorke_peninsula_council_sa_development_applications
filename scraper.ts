@@ -209,7 +209,7 @@ async function parse(dateFrom: moment.Moment, dateTo: moment.Moment, database) {
                     informationUrl: informationUrl,
                     commentUrl: CommentUrl,
                     scrapeDate: moment().format("YYYY-MM-DD"),
-                    receivedDate: receivedDate.isValid ? receivedDate.format("YYYY-MM-DD") : ""
+                    receivedDate: receivedDate.isValid() ? receivedDate.format("YYYY-MM-DD") : ""
                 }
                 let hasInserted = await insertRow(database, developmentApplication);
                 if (!hasInserted)  // if not inserted because already existed
